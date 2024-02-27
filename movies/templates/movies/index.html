@@ -1,0 +1,28 @@
+{% extends "movies/base.html" %}
+
+{% block title %}
+    All Movies
+{% endblock %}
+
+{% comment %}
+    {% block content %}
+        <ul>
+            <li>Movie 1......</li>
+        </ul>
+    {% endblock %}
+{% endcomment %}
+
+
+{% block content %}
+    <h2>All Movies</h2>
+
+    <ul>
+        {% for movie in all_movies %}
+            <li>
+                <a href="{{ movie.get_absolute_url }}">
+                    {{ movie.title }}
+                </a> 
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}    
